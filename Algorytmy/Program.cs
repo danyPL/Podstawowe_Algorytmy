@@ -100,18 +100,29 @@ namespace Alogrytmy
         // 3. Program przestaje liczyć dalej, kiedy osiągnie element n, który został podany przez użytkownika.
         static Action<int> Zad4 = (n) =>
         {
-            Console.WriteLine("Zadanie Znajdowanie liczb w ciagu fibonacciego")
-            ;
+            Console.WriteLine("Zadanie: Znajdowanie liczb w ciągu Fibonacciego");
+
             static int fib(int n)
             {
-                if (n < 2)
-                    return n;
-                return fib(n - 1) + fib(n - 2);
+                if (n == 0)
+                {
+                    return 0;
+                }
+                else if (n == 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return fib(n - 1) + fib(n - 2);
+                }
             }
-            for( int i = 0; i < n; i++)
+
+            Console.WriteLine("Ciąg Fibonacciego:");
+
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Ciag fibbonaciego");
-                Console.Write($"{n + 1}, {fib(n)} ");
+                Console.Write($"{fib(i)}, ");
             }
         };
         //  Zasada działania algorytmu:
@@ -283,7 +294,7 @@ namespace Alogrytmy
             Zad1(4);
             Zad2(10,7);
             Zad3("TESTOWY",2);
-            Zad4(4);
+            Zad4(7);
             Zad5(144);
             int[] n = { 4, 12, 5, 1, 8, 30, 182, 3, 6, 14, 28, 50, 13 };
             Zad6(n);
